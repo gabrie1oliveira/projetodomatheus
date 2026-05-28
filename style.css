@@ -1,0 +1,648 @@
+/* Marrom moca 9b5c42
+ bege torrado a67b5b
+ céu verão 5ab2ff 
+ */
+
+
+body {
+
+    box-shadow: #1e1b2e 100px 0px 0px 1000px inset;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e1b2e;
+    color: white;
+}
+
+.topo {
+
+    /*background preto, o 1° */
+    opacity: 0.90;
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    background-color: rgba(17, 16, 26, 0.95);
+}
+
+/*estou alterando aqui*/
+
+.logo {
+
+    /*texto do logo, o 2° */
+    font-family: 'Press Start 2P', cursive;
+
+    margin: 0 0 12 px 0;
+
+    color: #FFAA00;
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 0 8px rgba(90, 178, 255, 0.4),
+        0 0 15px rgba(217, 119, 6, 0.2);
+
+    line-height: 1.4;
+}
+
+.menu a {
+
+    color: #f5e6c8;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu a::after {
+
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D97706;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu a:hover::after {
+    /*efeito de sublinhado ao passar o mouse* */
+
+
+    width: 70%;
+    /* :hover para  aumentar a largura do sublinhado */
+}
+
+.menu a:hover {
+    text-decoration: none;
+    color: #D97706;
+}
+
+.principal {
+    text-align: center;
+}
+
+.hero {
+    /*chama a class "hero" */
+    display: flex;
+    /*display flex para organizar os elementos em linha*/
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 40px;
+
+}
+
+.hero-texto {
+    max-width: 50%;
+}
+
+.destaque {
+
+    background-color: #a67b5b;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px 10px 10px 10px;
+    /*margem para o destaque*/
+
+}
+
+/*estilização do título e descrição do produto*/
+.titulo {
+
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    font-size: 18px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+
+/*estilização do container da imagem do produto*/
+.img-produto {
+    width: 100%;
+    text-align: center;
+}
+
+/*estilização da imagem do produto*/
+.img-produto img {
+
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    /*add box shadow para dar um efeito de sombra*/
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.25),
+        0 0 80px rgba(90, 178, 255, 0.45),
+        0 0 120px rgba(120, 200, 255, 0.25);
+}
+
+.img-produto img:hover {
+
+    transform: scale(1.03);
+}
+
+
+.bem-vindo {
+
+    font-size: 18px;
+    color: #a67b5b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.h1 {
+
+    /*texto do título*/
+    font-family: cinzel, serif;
+    font-size: 76px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.p2 {
+
+    /*texto da descrição */
+    font-family: cinzel, serif;
+    font-size: 26px;
+    color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+
+
+
+/*sempre tem que chamar uma class="alguma coisa" para usar o css, se não, não funciona */
+
+
+/*-------------------------------------------------------------*/
+/* BOTÃO ANIMADO RPG */
+
+
+.glow-on-hover {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 260px;
+
+    height: 65px;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 0;
+
+    border-radius: 16px;
+
+    background: #151320;
+    /*background preto, o 1° */
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s ease;
+}
+
+/* brilho externo */
+
+.glow-on-hover::before {
+
+    content: '';
+
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+
+    border-radius: 16px;
+
+    background: linear-gradient(45deg,
+            #cc0000,
+            #e75858,
+            #5ab2ff,
+            #8b5cf6,
+            #e904c3c7,
+            #00eb46);
+
+    background-size: 400%;
+
+    filter: blur(10px);
+
+    z-index: -1;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease-in-out;
+
+    animation: glowing 10s linear infinite;
+}
+
+/* ativa brilho */
+
+.glow-on-hover:hover::before {
+
+    opacity: 1;
+}
+
+/* fundo do botão */
+
+.glow-on-hover::after {
+
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: #3b3368;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 16px;
+
+    z-index: -1;
+}
+
+/* efeito hover */
+
+.glow-on-hover:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 25px rgba(90, 178, 255, 0.3),
+        0 0 40px rgba(217, 119, 6, 0.25);
+}
+
+/* clique */
+
+.glow-on-hover:active {
+
+    transform: scale(0.97);
+}
+
+/* animação */
+
+@keyframes glowing {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.img-produto img {
+
+    animation: float 4s ease-in-out infinite;
+    transition: 0.3s;
+}
+
+/* efeito ao passar mouse */
+
+.img-produto img:hover {
+
+    transform: scale(1.03);
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/*término do codigo do botão animado*/
+/*-------------------------------------------------------------*/
+
+/*fazer um boneco que fique no canto inferior esquerdo da tela*/
+
+/*alteração aqui----------------------------------------------*/
+.logo-img img {
+    width: 80px;
+    /*tamanho da imagem do logo*/
+    position: absolute;
+    /*posição absoluta para o logo, para ficar no canto superior esquerdo da tela*/
+    top: 10px;
+    /*posição absoluta para o logo, para ficar no canto superior esquerdo da tela*/
+    left: 20px;
+    /*posição absoluta para o logo, para ficar no canto superior esquerdo da tela*/
+}
+
+.section {
+    padding: 100px 40px;
+    /*espaçamento interno para a seção*/
+    min-height: 100vh;
+    /*altura mínima para ocupar toda a tela*/
+    display: flex;
+    /*display flex para organizar os elementos em linha*/
+    align-items: center;
+    /*alinha os itens verticalmente*/
+    justify-content: center;
+    /*centraliza o conteúdo*/
+    gap: 40px;
+    /*espaçamento entre os elementos*/
+}
+
+.espada {
+    color: white;
+    font-size: 25px;
+    margin: auto;
+}
+
+.hr {
+    border: none;
+    border-top: 2px solid #a67b5b;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.div_sobre {
+    padding: 100px;
+}
+
+.sobrep2 {
+    text-align: center;
+    font-family: Cinzel, serif;
+    padding: 0.5%;
+    font-size: 35px;
+    color: #ffffff;
+    max-width: 1250px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.sobreh2 {
+    font-family: cinzel, serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sobrehr {
+    text-align: center;
+    border: none;
+    border-top: 2px solid #a67b5b;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.sobrengrt {
+
+    font-family: cinzel, serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.div_sobre {
+    padding: 20px 0;
+}
+
+.sobre {
+    background-color: #1e1b2e;
+    color: white;
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.sobre h2 {
+    letter-spacing: 2px;
+    font-size: 36px;
+    margin-bottom: 35;
+
+}
+
+.ngrtp1 {
+    font-weight: 600;
+}
+
+.controle {
+    font-size: 25px;
+    margin-right: 10px;
+    color: black;
+}
+
+.indicador {
+    font-size: 30px;
+    margin: 0 10px;
+
+}
+
+/*estilização da seção de serviços*/
+
+.div_servicos {
+    padding: 20px 0;
+}
+
+.servicos {
+    background-color: #1e1b2e;
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.servicosh2 {
+    font-size: 36px;
+    margin-bottom: 35px;
+    line-height: 1.2;
+    font-family: cinzel, serif;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.servicosp2 {
+    font-family: cinzel, serif;
+    font-size: 35px;
+    color: #ffffff;
+    max-width: 2000px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+
+.servicos h2 {
+    letter-spacing: 2px;
+
+}
+
+.servicoshr {
+    color: #a67b5b;
+    border: none;
+    border-top: 2px solid #a67b5b;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.servicosbr {
+    height: 100px;
+    /*altura da quebra de linha entre os serviços*/
+}
+
+.ngrtp1 {
+    font-family: cinzel, serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.img-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    /*add box shadow para dar um efeito de sombra*/
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.25),
+        0 0 80px rgba(90, 178, 255, 0.45),
+        0 0 120px rgba(120, 200, 255, 0.25);
+}
+
+.img-cards img:hover {
+    /*efeito de hover para as imagens das cards* */
+
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.card h3 {
+    font-family: cinzel, serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 10px;
+    line-height: 1.2;
+    font-size: 36px;
+    margin-bottom: 35px;
+    line-height: 1.2;
+    font-family: cinzel, serif;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card hr {
+    height: 200px;
+    color: #a67b5b;
+    border: none;
+    border-top: 2px solid #a67b5b;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/*max-width para as imagens das cards*/
+/*border-radius para as bordas arredondadas das cards*/
+
+.div_produtos {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 35px;
+    line-height: 1.2;
+    font-family: cinzel, serif;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #D97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
